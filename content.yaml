@@ -3,7 +3,7 @@ url: http://wacrenier.me
 name: "Pierre Wacrenier"
 description: "SRE Manager with strong engineering background, supporting services at scale. Constantly seeking to replace the human variable in systems maintenance and growth, with the help of other humans."
 email: "pierre@wacrenier.me"
-linkedin: 
+linkedin:
     name: pierrewacrenier
     url: linkedin.com/in/pierrewacrenier
 github: github.com/mota
@@ -24,8 +24,11 @@ experience:
           - Support business-critical services
           - Inspire automation efforts
           - Foster tight SWE-SRE communication, reshaping the production culture
-          - Layout the foundation and drive the effort to reach Continuous Delivery
-          - Support the effort to migrate the compute to Kubernetes
+          - Layout the foundations and drive the effort to reach Continuous Delivery
+          - Support the compute migration to Kubernetes
+          - Uphold SLO standards (>=99.99%)
+          - Restructure the team to implement a multi-site paradigm with London, UK
+          - Drive the effort to reduce the on-call footprint by 90%
     - start_date: Feb. 2018
       end_date: May. 2019
       what: "Engineering Manager & Senior DevOps Engineer"
@@ -48,15 +51,15 @@ experience:
           - Chef
           - Team and Project Management
       duties:
-          - Architect the Westfield Digital group's cloud infrastructure using Terraform
+          - Architect the Westfield Digital group's cloud infrastructure
           - Deploy Monitoring across all projects and setup alerting based off New Relic and Sumo Logic
           - Maintain and enhance custom monitoring and alerting systems for mall Digital Directories
-          - Create in-house Slack chatbot to automate, in a safe and centralized environment, tasks non-operational employees would run (re-deploy a project, restart an machine, launch one-off tasks)
-          - Develop in-house CI/CD application that automates the build and deployment of any web-facing application
+          - Create in-house Slack chatbot to automate human-triggered deployments
+          - Develop a custom CI/CD solution to deploy any micro service
           - Implement Review Apps to allow automatic deployment and deletion of in-progress features
+          - Develop an abstraction layer EC2 Parameter Store to ease the company's secret management
           - Migrate Production Environment from Heroku to Amazon Web Services with ECS
           - Setup CI/CD for in-house ETL platform hosted on Google Cloud Platform (Cloud Function, Dataflow)
-          - Make a tool to securely and conveniently manage secrets based off EC2 Parameter Store
           - Develop a Ruby/Rails gem to integrate GCP PubSub within the ActiveSupport/ActiveModel paradigm
           - Refresh and maintain the Chef environment
     - start_date: Aug. 2016
@@ -71,7 +74,7 @@ experience:
           - REST
           - Heroku
       duties:
-          - Develop the company's stats application
+          - Develop the company's data analysis platform
           - Bridge the company user base with Zendesk to improve customer support
           - Enhance the operations dashboard to ease taking of actions
           - Improve the vendor-facing web application
@@ -79,7 +82,7 @@ experience:
           - Re-architecture the staging environement revolving around Heroku App Reviews
           - Provide an interactive and reactive tool to easily modify vendors' working areas
           - Develop the B2B technical workflow into the platform
-          - Security audit of the platform and patch the vulnerability bug
+          - Security audit of the platform and patch the vulnerability bugs
     - start_date: Oct. 2013
       end_date: Jul. 2016
       what: "Software Engineer"
