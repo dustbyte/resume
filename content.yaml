@@ -2,22 +2,11 @@ page_title: "Pierre Wacrenier - Résumé"
 url: http://wacrenier.me
 name: "Pierre Wacrenier"
 description: "SRE Manager, supporting services at scale. Constantly seeking to replace the human variable in systems maintenance and growth."
-links:
-    pierre@wacrenier.me:
-        type: email
-        visibility: screen
-    pierre.wacrenier@gmail.com:
-        type: email
-        visibility: print
-    "+1 310-709-2819":
-        type: phone
-        visibility: print
-    linkedin.com/in/pierrewacrenier:
-        icon: icon-linkedin-sign
-        target: http://linkedin.com/in/pierrewacrenier
-    github.com/mota:
-        icon: icon-github-sign
-        target: http://github.com/mota
+email: "pierre@wacrenier.me"
+linkedin: 
+    name: pierrewacrenier
+    url: linkedin.com/in/pierrewacrenier
+github: github.com/mota
 experience:
     - start_date: Jun. 2019
       end_date: Present
@@ -186,28 +175,15 @@ education:
     - start_date: Sep. 2008
       end_date: Mar. 2013
       school: Epitech, Paris, European Institute of IT
-      skills:
-          - Master of Science in Information Technology
-          - C
-          - C++
-          - Security
-          - Linux
-          - FreeBSD
-          - x86/amd64 assembly
+      degree: MSc in Information Technology
     - start_date: Jan. 2012
       end_date: Jun. 2012
       school: California State University, Long Beach
-      skills:
-          - Compiler Construction
-          - Operating System
-          - Computer Security
-          - Theory of computation
+      degree: Exchange Student
     - start_date: Jul. 2012
       end_date: Aug. 2012
       school: University of California, Berkeley
-      skills:
-          - Web Architecture
-          - International Business
+      degree: Summer Sessions
 languages:
     French: Native
     English: Fluent

@@ -1,155 +1,165 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href="favicon.ico" rel="icon" type="image/ico" />
-        <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
-        <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <meta charset="utf-8" />
-        <title>{{ page_title }}</title>
-    </head>
-    <body>
-        <div id="main">
-            <div id="header">
-                <div id="name">
-                    <a href="{{ url }}">{{ name }}</a>
-                    <p class="description">
-                        {{ description }}
-                    </p>
+<html lang="en">
+<head>
+    <title>{{ page_title }}</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS-->
+	<script defer src="assets/fontawesome/js/all.min.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/orbit-6.css">
+</head>
+
+<body>
+    <div class="wrapper mt-lg-5">
+        <div class="sidebar-wrapper">
+            <div class="profile-container">
+                <img class="profile" src="assets/images/profile.png" alt="" />
+                <h1 class="name">{{ name }}</h1>
+                <h3 class="tagline">Site Reliability Engineer</h3>
+            </div><!--//profile-container-->
+
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                    <li class="email"><i class="fas fa-envelope"></i><a href="mailto: {{ email }}">{{ email }}</a></li>
+                    <li class="linkedin"><i class="fab fa-linkedin-in"></i><a href="https://{{ linkedin.url }}" target="_blank">{{ linkedin.name }}</a></li>
+                    <li class="github"><i class="fab fa-github"></i><a href="https://{{ github }}" target="_blank">{{ github }}</a></li>
+                </ul>
+            </div><!--//contact-container-->
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+{% for school in education %}
+                <div class="item">
+                    <h4 class="meta">{{ school.school }}</h4>
+                    <h5 class="degree">{{ school.degree }}</h5>
+	                    <div class="time">{{ school.start_date }} - {{ school.end_date }}</div>
+                </div><!--//item-->
+{% endfor %}
+            </div><!--//education-container-->
+
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Languages</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>French <span class="lang-desc">(Native)</span></li>
+                    <li>English <span class="lang-desc">(Fluent)</span></li>
+                    <li>Spanish <span class="lang-desc">(Basic)</span></li>
+                </ul>
+            </div><!--//interests-->
+
+            <div class="interests-container container-block">
+                <h2 class="container-block-title">Interests</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>Motorcycling</li>
+                    <li>Woodworking</li>
+                    <li>Rubik's Cube</li>
+                    <li>The Gameboy</li>
+                </ul>
+            </div><!--//interests-->
+
+        </div><!--//sidebar-wrapper-->
+
+        <div class="main-wrapper">
+
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-user"></i></span>Career Profile</h2>
+                <div class="summary">
+                    <p>{{ description }}</p>
+                </div><!--//summary-->
+            </section><!--//section-->
+
+            <section class="section experiences-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Experiences</h2>
+{% for job in experience %}
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">{{ job.what }}</h3>
+                            <div class="time">{{ job.start_date  }} - {{ job.end_date }}</div>
+                        </div><!--//upper-row-->
+                        <div class="company">{{ job.who }}, {{ job.where }}</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <ul>
+{% for duty in job.duties %}
+                            <li>
+                                {{ duty }}
+                            </li>
+{% endfor %}
+                        </ul>
+                    </div><!--//details-->
+                </div><!--//item-->
+{% endfor %}
+
+            </section><!--//section-->
+
+            <section class="skills-section section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills &amp; Proficiency</h2>
+                <div class="skillset">
+                    <div class="item">
+                        <h3 class="level-title">Python &amp; Django</h3>
+                        <div class="progress level-bar">
+						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="level-title">Javascript</h3>
+                        <div class="progress level-bar">
+						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="level-title">React &amp; Angular</h3>
+                        <div class="progress level-bar">
+						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="level-title">HTML5 &amp; CSS</h3>
+                        <div class="progress level-bar">
+							    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="level-title">Ruby on Rails</h3>
+                        <div class="progress level-bar">
+						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="level-title">Sketch &amp; Photoshop</h3>
+                        <div class="progress level-bar">
+						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+                    </div><!--//item-->
+
                 </div>
-                <div id="info">
-                    <ul>
-                        {% for name, link in links.items() %}
-                        {% if link.visibility == 'print' %}
-                        <li class="printable">
-                        {% elif link.visibility == 'screen' %}
-                        <li class="screenable">
-                        {% else %}
-                        <li>
-                        {% endif %}
-                        {% if link.type == 'email' %}
-                            <i class="icon-envelope-alt"></i>
-                            <a href="mailto:{{ name }}">{{ name }}</a>
-                        {% elif link.type == 'phone' %}
-                            <i class="icon-phone"></i>
-                            {{ name }}
-                        {% else %}
-                            <i class="{{ link.icon  }}"></i>
-                            <a href="{{ link.target }}">{{ name }}</a>
-                        {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div id="content">
-                <div class="section">
-                    <h3>Experience</h3>
-                    <table>
-                        {% for job in experience %}
-                        <tr>
-                            <td class="dates">
-                                {{ job.start_date }}
-                                <i class="icon-circle-arrow-right"></i>
-                                {{ job.end_date }}
-                            </td>
-                            <td class="what">
-                                <h3>{{ job.what }}, {{ job.who }}, {{ job.where }}</h3>
-                                <div class="job-skills">{{ job.skills | join(', ') }}</div>
-                                <ul class="description">
-                                    {% for duty in job.duties %}
-                                    <li>
-                                        {{ duty }}
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-                <div class="section">
-                    <h3>Skills</h3>
-                    <table>
-                        {% for level, items in skills.items() %}
-                        <tr>
-                            <td class="context">
-                                <h4>
-                                    {{ level }}
-                                </h4>
-                            </td>
-                            <td class="what">
-                                {{ items | join(', ') }}
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-                <div class="section">
-                    <h3>Education</h3>
-                    <table>
-                        {% for school in education %}
-                        <tr>
-                            <td class="dates">
-                                {{ school.start_date }}
-                                <i class="icon-circle-arrow-right"></i>
-                                {{ school.end_date }}
-                            </td>
-                            <td class="what">
-                                <h3>{{ school.school }}</h3>
-                                <ul class="description">
-                                    {% for skill in school.skills %}
-                                    <li>
-                                        {{ skill }}
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                </p>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-                <div class="section">
-                    <h3>Languages</h3>
-                    <table>
-                        {% for language, proficiency in languages.items() %}
-                        <tr>
-                            <td class="context">
-                                <strong>{{language}}</strong>
-                            </td>
-                            <td class="what">
-                                 {{proficiency }}
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-                <div class="section">
-                    <h3>Honors and Activities</h3>
-                    <table>
-                        <tr>
-                            <td class="context">
-                                &nbsp;
-                            </td>
-                            <td>
-                                <ul class="awards">
-                                    {% for activity in activities %}
-                                    <li>
-                                        {{ activity }}
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div style="display: none;">
-                    -----------------------------BEGIN GEEK CODE BLOCK-----------------------------
-                    GCS/IT d-@ s+: a- C++++ UBL+++$ P+ L++$ E W+++ N+ o? K+ w O- M+ V? PS+ PE- Y?
-                    PGP+ t+ 5 X+ R tv- b++ DI? D+ G++ e+++ h-- r++ y++
-                    ------------------------------END GEEK CODE BLOCK------------------------------
-                </div>
-            </div>
-        </div>
-    </body>
+            </section><!--//skills-section-->
+
+        </div><!--//main-body-->
+    </div>
+
+    <footer class="footer">
+        <div class="text-center">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+</body>
 </html>
+
