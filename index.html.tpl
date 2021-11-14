@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- FontAwesome JS-->
@@ -17,7 +17,7 @@
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/orbit-6.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -59,10 +59,9 @@
             <div class="interests-container container-block">
                 <h2 class="container-block-title">Interests</h2>
                 <ul class="list-unstyled interests-list">
-                    <li>Motorcycling</li>
-                    <li>Woodworking</li>
-                    <li>Rubik's Cube</li>
-                    <li>The Gameboy</li>
+{% for activity in activities %}
+                    <li>{{ activity }}</li>
+{% endfor %}
                 </ul>
             </div><!--//interests-->
 
@@ -83,10 +82,11 @@
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">{{ job.what }}</h3>
+                            <h3 class="company">{{ job.who }}, {{ job.where }}</h3>
                             <div class="time">{{ job.start_date  }} - {{ job.end_date }}</div>
                         </div><!--//upper-row-->
-                        <div class="company">{{ job.who }}, {{ job.where }}</div>
+                        <div class="job-title">{{ job.what }}</div>
+                        <div class="job-skills">{{ job.skills | join(', ') }}</div>
                     </div><!--//meta-->
                     <div class="details">
                         <ul>
@@ -105,48 +105,18 @@
             <section class="skills-section section">
                 <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills &amp; Proficiency</h2>
                 <div class="skillset">
+{% for level, items in skills.items() %}
                     <div class="item">
-                        <h3 class="level-title">Python &amp; Django</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 class="skill-level">{{ level }}</h3>
+                            </div><!--//upper-row-->
+                            <div class="skill-list">
+                                {{ items | join(', ') }}
+                            </div>
+                        </div><!--//meta-->
                     </div><!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">Javascript</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-                    </div><!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">React &amp; Angular</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-                    </div><!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">HTML5 &amp; CSS</h3>
-                        <div class="progress level-bar">
-							    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-                    </div><!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">Ruby on Rails</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-                    </div><!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">Sketch &amp; Photoshop</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-                    </div><!--//item-->
-
+{% endfor %}
                 </div>
             </section><!--//skills-section-->
 
