@@ -112,7 +112,7 @@
                                 <h3 class="skill-level">{{ level }}</h3>
                             </div><!--//upper-row-->
                             <div class="skill-list">
-                                {{ items | join(', ') }}
+                                {{ items | join(' | ') }}
                             </div>
                         </div><!--//meta-->
                     </div><!--//item-->
