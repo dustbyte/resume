@@ -31,7 +31,7 @@
 
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fas fa-envelope"></i><a href="mailto: {{ email }}">{{ email }}</a></li>
+                    <li class="email"><i class="fas fa-envelope"></i><a href="mailto:{{ email }}">{{ email }}</a></li>
                     <li class="linkedin"><i class="fab fa-linkedin-in"></i><a href="https://{{ linkedin.url }}" target="_blank">{{ linkedin.name }}</a></li>
                     <li class="github"><i class="fab fa-github"></i><a href="https://{{ github }}" target="_blank">{{ github }}</a></li>
                 </ul>
