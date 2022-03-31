@@ -1,15 +1,30 @@
 page_title: "Pierre Wacrenier - Résumé"
 url: http://wacrenier.me
 name: "Pierre Wacrenier"
-description: "SRE Manager with a strong software engineering background, supporting services at scale. Constantly seeking to replace the human variable in systems maintenance and growth, with the help of other humans."
+description: "SRE with a strong software engineering background, supporting services at scale. Constantly seeking to replace the human variable in systems maintenance and growth, with the help of other humans."
 email: "pierre@wacrenier.me"
 linkedin:
     name: pierrewacrenier
     url: linkedin.com/in/pierrewacrenier
 github: github.com/mota
 experience:
-    - start_date: Jun. 2019
+    - start_date: Jan. 2022
       end_date: Present
+      who: "Apple, Inc."
+      what: "Senior iCloud SRE"
+      where: "Cupertino"
+      skills:
+          - Cross-functional coordination
+          - Kubernetes
+          - Helm
+          - Spinnaker
+      duties:
+        - Support cross-functional efforts
+        - Facilitate intra and extra organization communication
+        - Lead incident command and emmergency communication
+        - Organize post-mortems and track action items
+    - start_date: Jun. 2019
+      end_date: Jan. 2022
       what: "iCloud SRE Manager"
       who: "Apple Inc."
       where: "Cupertino"
