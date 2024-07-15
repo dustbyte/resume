@@ -50,9 +50,9 @@
             <div class="languages-container container-block">
                 <h2 class="container-block-title">Languages</h2>
                 <ul class="list-unstyled interests-list">
-                    <li>French <span class="lang-desc">(Native)</span></li>
-                    <li>English <span class="lang-desc">(Fluent)</span></li>
-                    <li>Spanish <span class="lang-desc">(Basic)</span></li>
+{% for language, proficiency in languages.items() %}
+                    <li>{{ language }} <span class="lang-desc">({{ proficiency }})</span></li>
+{% endfor %}
                 </ul>
             </div><!--//interests-->
 
